@@ -1,6 +1,4 @@
-package domain;
-
-import org.springframework.data.annotation.Id;
+package com.example.domain;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
