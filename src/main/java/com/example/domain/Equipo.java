@@ -1,10 +1,10 @@
 package com.example.domain;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 
+@Entity
 public class Equipo {
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String nombre;
     private String localidad;
