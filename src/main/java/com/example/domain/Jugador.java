@@ -14,6 +14,8 @@ public class Jugador {
     private int rebotes;
     private int asistencias;
     private String posicion;
+    @ManyToOne
+    private Equipo equipo;
 
     public Jugador(String nombre, String fecha,int canastas, int rebotes, int asistencias, String posicion){
         this.nombre = nombre;

@@ -17,7 +17,7 @@ public class Equipo {
     public Equipo(String nombre, String localidad, String fechac){
         this.nombre = nombre;
         this.localidad = localidad;
-        this.fechac = fechac
+        this.fechac = fechac;
     }
 
     public Long getId() {

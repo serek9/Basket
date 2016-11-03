@@ -25,7 +25,7 @@ public class JugadorService {
         jugadorRepository.save(jugador4);
 
         Jugador jugador5 = new Jugador("Victor", "01/03/1996", 4, 2, 2, "base");
-        jugadorRepository.save(jugador5); 
+        jugadorRepository.save(jugador5);
 
         Jugador jugador6 = new Jugador("Hector", "02/02/1996", 5, 1, 3, "defensa");
         jugadorRepository.save(jugador6);
