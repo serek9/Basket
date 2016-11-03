@@ -6,9 +6,27 @@ import javax.persistence.*;
 public class Equipo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String nombre;
     private String localidad;
     private String fechac;
+
+    public Equipo(){
+    }
+
+    public Equipo(String nombre, String localidad, String fechac){
+        this.nombre = nombre;
+        this.localidad = localidad;
+        this.fechac = fechac
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNombre() {return nombre;}
 
@@ -23,9 +41,10 @@ public class Equipo {
     public void setFechac(String fechac) {this.fechac = fechac;}
 
     @Override
-    public String toString() {
+    public java.lang.String toString() {
         return "Equipo{" +
-                "nombre='" + nombre + '\'' +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
                 ", localidad='" + localidad + '\'' +
                 ", fechac='" + fechac + '\'' +
                 '}';
