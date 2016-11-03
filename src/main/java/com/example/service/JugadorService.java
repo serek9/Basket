@@ -29,5 +29,9 @@ public class JugadorService {
 
         Jugador jugador6 = new Jugador("Hector", "02/02/1996", 5, 1, 3, "defensa");
         jugadorRepository.save(jugador6);
+
+
+        System.out.println("Buscar por nombre: Sergio");
+        System.out.println(jugadorRepository.findByNombre("ser"));
     }
 }

@@ -8,10 +8,10 @@ import java.util.List;
 public interface JugadorRepository extends JpaRepository<Jugador, Long>{
 
     List<Jugador> findByNombre(String nombre);
-    List<Jugador> findByNombreApellido(String nombre, String apellidos);
+    List<Jugador> findByNombreAndApellido(String nombre, String apellidos);
     List<Jugador> findByNombreOrApellido(String nombre, String apellido);
     List<Jugador> findByPosicion(String posicion);
-    List<Jugador> findByFechaAnterior(int rebotes);
+    List<Jugador> findByFechaBefore(int rebotes);
 
 
 }
