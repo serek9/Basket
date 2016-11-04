@@ -32,6 +32,9 @@ public class JugadorService {
 
 
         System.out.println("Buscar por nombre: Sergio");
-        System.out.println(jugadorRepository.findByNombre("ser"));
+        System.out.println(jugadorRepository.findByNombreContaining("ser"));
+
+        System.out.println("Buscar por canastas iguales o superiores a 4");
+        System.out.println(jugadorRepository.findByCanastasGreaterThanEqual(4));
     }
 }
