@@ -19,8 +19,11 @@ public class EquipoService {
 
         System.out.println("Buscar por nombre: Equipo B");
         System.out.println(equipoRepository.findByNombre("Equipo B"));
-
+        System.out.println("");
         System.out.println("Buscar por localidad: Barcelona");
         System.out.println(equipoRepository.findByLocalidad("Barcelona"));
+        System.out.println("");
+        System.out.println("Jugadores del Equipo B:");
+        System.out.println(equipoRepository.findJugadoresByEquipo("Equipo B"));
     }
 }
