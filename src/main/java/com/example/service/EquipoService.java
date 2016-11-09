@@ -25,5 +25,8 @@ public class EquipoService {
         System.out.println("");
         System.out.println("Jugadores del Equipo B:");
         System.out.println(equipoRepository.findJugadoresByEquipo("Equipo B"));
+        System.out.println("");
+        System.out.println("Jugadores con posicion base");
+        System.out.println(equipoRepository.findJugadoresByPosicion("base"));
     }
 }

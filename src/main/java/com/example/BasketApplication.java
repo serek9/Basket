@@ -13,7 +13,8 @@ public class BasketApplication {
 		JugadorService jugadorService = context.getBean(JugadorService.class);
 		EquipoService equipoService = context.getBean(EquipoService.class);
 
-		jugadorService.testGamers();
 		equipoService.testSquad();
+		jugadorService.testGamers();
+
 	}
 }

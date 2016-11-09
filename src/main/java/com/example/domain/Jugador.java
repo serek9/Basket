@@ -17,13 +17,14 @@ public class Jugador {
     @ManyToOne
     private Equipo equipo;
 
-    public Jugador(String nombre, String fecha,int canastas, int rebotes, int asistencias, String posicion){
+    public Jugador(String nombre, String fecha,int canastas, int rebotes, int asistencias, String posicion, Equipo equipo){
         this.nombre = nombre;
         this.fecha = fecha;
         this.canastas = canastas;
         this.rebotes = rebotes;
         this.asistencias = asistencias;
         this.posicion = posicion;
+        this.equipo = equipo;
     }
 
     public Jugador(){
@@ -51,6 +52,9 @@ public class Jugador {
     public String getPosicion() {return posicion;}
     public void setPosicion(String posicion) {this.posicion = posicion;}
 
+    public Equipo getEquipo() {return equipo;}
+    public void setEquipo(Equipo equipo) {this.equipo = equipo;}
+
     @Override
     public String toString() {
         return "Jugador{" +
@@ -61,6 +65,7 @@ public class Jugador {
                 ", rebotes=" + rebotes +
                 ", asistencias=" + asistencias +
                 ", posicion='" + posicion + '\'' +
+                ", equipo=" + equipo +
                 '}';
     }
 }

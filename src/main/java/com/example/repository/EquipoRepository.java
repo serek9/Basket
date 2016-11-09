@@ -15,4 +15,7 @@ public interface EquipoRepository extends JpaRepository<Equipo, Long>{
 
     @Query("select jugador from Jugador jugador where jugador.equipo.nombre is :nombre")
     List<Jugador> findJugadoresByEquipo(@Param("nombre") String nombre);
+
+    @Query("select jugador from Jugador jugador where jugador.posicion is :posicion")
+    List<Jugador> findJugadoresByPosicion(@Param("posicion") String posicion);
 }

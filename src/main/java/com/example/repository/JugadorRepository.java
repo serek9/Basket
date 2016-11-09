@@ -14,4 +14,16 @@ public interface JugadorRepository extends JpaRepository<Jugador, Long>{
     List<Jugador> findByPosicionIs(String posicion);
     List<Jugador> findByFechaBefore(String fecha);
 
+    @Query("SELECT jugador.posicion, AVG(jugador.canastas), AVG(jugador.rebotes), AVG(jugador.asistencias) " +
+            "FROM Jugador jugador " +
+            "GROUP BY jugador.posicion")
+    List<Object[]> AvgCanastasRebotesAsistenciasPerPosicion();
+
+    @Query("SELECT jugador.posicion, AVG(jugador.canastas), AVG(jugador.rebotes), AVG(jugador.asistencias), " +
+            "MIN(jugador.canastas), MIN(jugador.rebotes), MIN(jugador.asistencias), " +
+            "MAX(jugador.canastas), MAX(jugador.rebotes), MAX(jugador.asistencias) " +
+            "FROM Jugador jugador " +
+            "GROUP BY jugador.posicion")
+    List<Object[]> AvgMinMaxCanastasRebotesAsistenciasPerPosicion();
+
 }
