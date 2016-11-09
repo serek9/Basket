@@ -38,16 +38,13 @@ public class JugadorService {
         jugadorRepository.save(jugador6);
 
 
-        System.out.println(equipoRepository.findByNombre("Equipo A"));
-
-
-        System.out.println("Buscar por nombre: Sergio");
+        System.out.println("Buscar por nombre: ser");
         System.out.println(jugadorRepository.findByNombreContaining("ser"));
         System.out.println("");
-        System.out.println("Buscar por canastas iguales o superiores a 4");
+        System.out.println("Buscar por canastas iguales o superiores a 4:");
         System.out.println(jugadorRepository.findByCanastasGreaterThanEqual(4));
         System.out.println("");
-        System.out.println("Buscar por asistencias entre 15 y 20");
+        System.out.println("Buscar por asistencias entre 15 y 20:");
         System.out.println(jugadorRepository.findByAsistenciasBetween(15,20));
         System.out.println("");
         System.out.println("Mostrar todos los atacantes:");
@@ -65,11 +62,11 @@ public class JugadorService {
         System.out.println("Jugadores del Equipo B:");
         System.out.println(equipoRepository.findJugadoresByEquipo("Equipo B"));
         System.out.println("");
-        System.out.println("Jugadores con posicion base");
+        System.out.println("Jugadores con posicion base:");
         System.out.println(equipoRepository.findJugadoresByPosicion("base"));
         System.out.println("");
-        System.out.println("Jugador con mayor numero de canastas del Equipo A");
-        System.out.println(equipoRepository.findJugadorMaxCanastasByEquipo("Equipo A"));
+        System.out.println("Jugador con mayor numero de canastas del Equipo A:");
+        showStatistics3(equipoRepository.findJugadorMaxCanastasByEquipo("Equipo A"));
     }
 
     private void showStatistics(List<Object[]> statisticsList){
@@ -93,6 +90,13 @@ public class JugadorService {
             System.out.println("MAX Canastas = "+statistic[7] +" puntos");
             System.out.println("MAX Rebotes = "+statistic[8] +" puntos");
             System.out.println("MAX Asistencias = "+statistic[9] +" puntos"+System.lineSeparator());
+        }
+    }
+
+    private void showStatistics3(List<Object[]> statisticsList){
+        for (Object[] statistic: statisticsList){
+            System.out.println("Jugador: "+statistic[0]);
+            System.out.println("Canastas = "+statistic[1] +System.lineSeparator());
         }
     }
 

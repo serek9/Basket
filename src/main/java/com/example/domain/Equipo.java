@@ -10,8 +10,6 @@ public class Equipo {
     private String nombre;
     private String localidad;
     private String fechac;
-    //@OneToMany
-    //private Jugador jugador;
 
     public Equipo(){
     }
@@ -41,10 +39,6 @@ public class Equipo {
     public String getFechac() {return fechac;}
 
     public void setFechac(String fechac) {this.fechac = fechac;}
-
-    //public Jugador getJugador() {return jugador;}
-
-    //public void setJugador(Jugador jugador) {this.jugador = jugador;}
 
     @Override
     public String toString() {
