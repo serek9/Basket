@@ -13,9 +13,12 @@ public interface EquipoRepository extends JpaRepository<Equipo, Long>{
     Equipo findByNombre(String nombre);
     List<Equipo> findByLocalidad(String loc);
 
-    @Query("select jugador from Jugador jugador where jugador.equipo.nombre is :nombre")
+    @Query("select jugador from Jugador jugador where jugador.equipo.nombre = :nombre")
     List<Jugador> findJugadoresByEquipo(@Param("nombre") String nombre);
 
-    @Query("select jugador from Jugador jugador where jugador.posicion is :posicion")
+    @Query("select jugador from Jugador jugador where jugador.posicion = :posicion")
     List<Jugador> findJugadoresByPosicion(@Param("posicion") String posicion);
+
+    @Query("select jugador.nombre, max(jugador.canastas) from Jugador jugador where jugador.equipo.nombre = :nombre")
+    List<Jugador> findJugadorMaxCanastasByEquipo(@Param("nombre") String nombre);
 }

@@ -61,7 +61,15 @@ public class JugadorService {
         System.out.println("");
         System.out.println("Media, max y min de la puntuación por posición:");
         showStatistics2(jugadorRepository.AvgMinMaxCanastasRebotesAsistenciasPerPosicion());
-
+        System.out.println("");
+        System.out.println("Jugadores del Equipo B:");
+        System.out.println(equipoRepository.findJugadoresByEquipo("Equipo B"));
+        System.out.println("");
+        System.out.println("Jugadores con posicion base");
+        System.out.println(equipoRepository.findJugadoresByPosicion("base"));
+        System.out.println("");
+        System.out.println("Jugador con mayor numero de canastas del Equipo A");
+        System.out.println(equipoRepository.findJugadorMaxCanastasByEquipo("Equipo A"));
     }
 
     private void showStatistics(List<Object[]> statisticsList){

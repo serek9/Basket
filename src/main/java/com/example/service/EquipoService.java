@@ -11,6 +11,9 @@ public class EquipoService {
     @Autowired
     private EquipoRepository equipoRepository;
 
+    @Autowired
+    private JugadorRepository jugadorRepository;
+
     public void testSquad(){
         Equipo equipo1 = new Equipo("Equipo A", "Barcelona", "08/08/1996");
         equipoRepository.save(equipo1);
@@ -23,10 +26,5 @@ public class EquipoService {
         System.out.println("Buscar por localidad: Barcelona");
         System.out.println(equipoRepository.findByLocalidad("Barcelona"));
         System.out.println("");
-        System.out.println("Jugadores del Equipo B:");
-        System.out.println(equipoRepository.findJugadoresByEquipo("Equipo B"));
-        System.out.println("");
-        System.out.println("Jugadores con posicion base");
-        System.out.println(equipoRepository.findJugadoresByPosicion("base"));
     }
 }
