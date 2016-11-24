@@ -50,10 +50,11 @@ public class JugadorController {
 
     //PREGUNTA 3
     @GetMapping("/byCanastasBetween/{a}-{b}")
-    public List<Jugador> findByCanastasBetween(@PathVariable Integer a, Integer b){
+    public List<Jugador> findByCanastasBetween(@PathVariable Integer a, @PathVariable Integer b){
         return jugadorRepository.findByCanastasBetween(a,b);
     }
     //PREGUNTA 4
+
     //PREGUNTA 5
     //PREGUNTA 6
     //PREGUNTA 7
