@@ -25,20 +25,37 @@ public class JugadorController {
     @GetMapping
     public List<Jugador> findAll(){ return  jugadorRepository.findAll(); }
 
+    //MUESTRA EL JUGADOR CON EL ID DE LA URL
     @GetMapping("/{id}")
     public Jugador findById(@PathVariable Long id){
         Jugador jugador = jugadorRepository.findOne(id);
         return jugador;
     }
 
+    //ELIMINA EL JUGADOR CON EL ID DE LA URL
+    @DeleteMapping("/delete/{id}")
+    public void deleteJugador(@PathVariable Long id){
+        jugadorRepository.delete(id);
+    }
+
+    //PREGUNTA 1
+    @GetMapping("orderByCanastas")
+    public  List<Jugador> orderByCanastas(){return jugadorRepository.orderByCanastas();}
+
+    //PREGUNTA 2
     @GetMapping("/byPoints/{num}")
     public List<Jugador> findByCanastasGreaterThanEqual(@PathVariable Integer num){
         return jugadorRepository.findByCanastasGreaterThanEqual(num);
     }
 
-    @DeleteMapping("/{id}/")
-    public void deleteJugador(@PathVariable Long id){
-        jugadorRepository.delete(id);
+    //PREGUNTA 3
+    @GetMapping("/byCanastasBetween/{a}-{b}")
+    public List<Jugador> findByCanastasBetween(@PathVariable Integer a, Integer b){
+        return jugadorRepository.findByCanastasBetween(a,b);
     }
+    //PREGUNTA 4
+    //PREGUNTA 5
+    //PREGUNTA 6
+    //PREGUNTA 7
 
 }
